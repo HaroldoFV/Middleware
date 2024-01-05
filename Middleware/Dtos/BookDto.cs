@@ -1,28 +1,20 @@
+using System.Text.Json.Serialization;
+
 namespace Middleware.DTOS;
 
 public class BookDto
 {
-    public Dictionary<string, string> Abbrev { get; set; }
-    public string Author { get; set; }
-    public int Chapters { get; set; }
-    public string Group { get; set; }
-    public string Name { get; set; }
-    public string Testament { get; set; }
+    [JsonPropertyName("abbrev")] public Dictionary<string, string> Abbrev { get; set; }
 
-    public BookDto()
-    {
-    }
+    [JsonPropertyName("author")] public string Author { get; set; }
 
-    public void Update(Dictionary<string, string> abbrev, string author, int chapters,
-                    string group, string name, string testament)
-    {
-        Abbrev = abbrev;
-        Author = author;
-        Chapters = chapters;
-        Group = group;
-        Name = name;
-        Testament = testament;
-    }
+    [JsonPropertyName("chapters")] public int Chapters { get; set; }
 
+    [JsonPropertyName("group")] public string Group { get; set; }
 
+    [JsonPropertyName("name")] public string Name { get; set; }
+
+    [JsonPropertyName("testament")] public string Testament { get; set; }
+    
+    [JsonPropertyName("comment")] public string Comment { get; set; }
 }
